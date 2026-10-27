@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pradeep Velavali — Power Platform &amp; AI Solutions Engineer</title>
+<meta name="description" content="9+ years building enterprise automation and AI agents on Microsoft Power Platform and Azure. Open to senior &amp; lead opportunities.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f8f5f0">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Pradeep Velavali — Power Platform &amp; AI Solutions Engineer">
+<meta property="og:description" content="9+ years building enterprise automation and AI agents. Open to senior &amp; lead opportunities.">
+<meta property="og:image" content="assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============ Warm Ink tokens ============ */
+:root{
+  --surface:#f8f5f0; --raised:#fffdfa; --ink:#1c1917; --muted:#57514a; --subtle:#6b6257;
+  --rule:#e5ded3; --accent:#b45309; --accent-hi:#92400e;
+  --panel:#1c1917; --panel-ink:#e9e3da; --panel-muted:#9c9288; --panel-accent:#f5b041;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --page:1120px; --tap:44px;
+  --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.5rem; --s6:2rem; --s7:3rem; --s8:5rem;
+
+  /* Wider jumps between steps than before — the old scale was too flat to
+     establish hierarchy, so everything read at the same weight. */
+  --f-2:clamp(.71rem,.69rem + .08vw,.76rem);
+  --f-1:clamp(.84rem,.81rem + .12vw,.92rem);
+  --f0:clamp(1.02rem,.98rem + .2vw,1.1rem);
+  --f1:clamp(1.14rem,1.07rem + .34vw,1.3rem);
+  --f2:clamp(1.3rem,1.16rem + .62vw,1.65rem);
+  --f3:clamp(1.65rem,1.38rem + 1.2vw,2.3rem);
+  --f4:clamp(2.1rem,1.6rem + 2.3vw,3.3rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--surface);color:var(--ink);
+  font:var(--f0)/1.65 var(--sans);-webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3{margin:0;text-wrap:balance}
+h1,h2{font-weight:650;line-height:1.14;letter-spacing:-.028em}
+h3{font-weight:600;line-height:1.22;letter-spacing:-.014em}
+p{margin:0;text-wrap:pretty}
+ul,ol{margin:0;padding:0}
+img{display:block;max-width:100%}
+a{color:var(--accent);text-underline-offset:.18em}
+a:hover{color:var(--accent-hi)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.page{width:min(100% - 2.5rem,var(--page));margin-inline:auto}
+.section{padding-block:var(--s8);border-top:1px solid var(--rule)}
+.label{color:var(--subtle);font-size:var(--f-2);font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin-bottom:var(--s4)}
+.title{font-size:var(--f3)}
+.lede{max-width:60ch;margin-top:var(--s4);color:var(--muted);font-size:var(--f1);line-height:1.62}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* ============ reveal on scroll ============ */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+
+/* ============ header ============ */
+header{
+  position:sticky;top:0;z-index:30;border-bottom:1px solid var(--rule);
+  background:color-mix(in srgb,var(--surface) 86%,transparent);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.bar{display:flex;align-items:center;gap:var(--s4);min-height:62px}
+.brand{margin-right:auto;font-weight:650;letter-spacing:-.02em;font-size:1.02rem;color:var(--ink);text-decoration:none}
+nav ul{display:flex;align-items:center;gap:var(--s5);list-style:none}
+nav a{display:inline-flex;align-items:center;min-height:var(--tap);color:var(--muted);font-size:var(--f-1);text-decoration:none}
+nav a:hover,nav a[aria-current=true]{color:var(--ink)}
+nav a[aria-current=true]{box-shadow:inset 0 -1.5px 0 var(--accent)}
+.menu{display:none;min-height:var(--tap);padding-inline:var(--s3);border:1px solid var(--rule);border-radius:3px;background:transparent;color:var(--ink);font:500 var(--f-1) var(--sans);cursor:pointer}
+.skip{position:absolute;left:1rem;top:1rem;z-index:60;padding:.7rem 1rem;background:var(--ink);color:var(--surface);border-radius:3px;text-decoration:none;transform:translateY(-250%)}
+.skip:focus-visible{transform:none}
+
+/* ============ hero ============ */
+.hero{padding-block:var(--s8) var(--s7)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:var(--s7);align-items:center}
+.avail{color:var(--accent);font-size:var(--f-1);font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.hero h1{max-width:19ch;margin-top:var(--s4);font-size:var(--f4);line-height:1.08}
+.hero .intro{max-width:54ch;margin-top:var(--s4);color:var(--muted);font-size:var(--f1);line-height:1.68}
+.meta{margin-top:var(--s4);color:var(--subtle);font-size:var(--f-1)}
+.cta{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s5)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:var(--tap);padding-inline:var(--s5);border-radius:3px;font:500 var(--f0) var(--sans);text-decoration:none;transition:background-color .15s,color .15s,border-color .15s,transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn-1{background:var(--accent);border:1px solid var(--accent);color:#fffdfa}
+.btn-1:hover{background:var(--accent-hi);border-color:var(--accent-hi);color:#fffdfa}
+.btn-2{border:1px solid var(--rule);color:var(--ink)}
+.btn-2:hover{border-color:var(--ink);color:var(--ink)}
+.links{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;margin-top:var(--s5);color:var(--subtle);font-size:var(--f-1);list-style:none}
+.links a{min-height:0}
+.portrait{width:100%;max-width:290px;justify-self:end;height:auto}
+
+/* ============ impact band ============ */
+.impact{background:var(--panel);color:var(--panel-ink);padding-block:var(--s7)}
+.impact .label{color:var(--panel-muted);margin-bottom:var(--s6)}
+.impact ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s6);list-style:none}
+.impact li{position:relative;padding-left:var(--s5)}
+.impact li::before{content:'';position:absolute;left:0;top:.5rem;bottom:.35rem;width:2px;background:linear-gradient(var(--panel-accent),transparent)}
+.fig{
+  font-size:var(--f3);font-weight:650;line-height:1;letter-spacing:-.035em;
+  font-variant-numeric:tabular-nums;color:var(--panel-accent);
+}
+.fig-l{margin-top:var(--s3);font-size:var(--f0);line-height:1.45;color:var(--panel-ink);max-width:22ch}
+.fig-note{margin-top:var(--s6);color:var(--panel-muted);font-size:var(--f-1);font-style:italic;max-width:76ch}
+
+/* ============ cards ============ */
+/* Three up, soft-cornered, numbered. Deliberately not a hard rectangle:
+   large radius, a tinted wash at the top edge and a lift on hover. */
+.work-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:var(--s4);margin-top:var(--s6);list-style:none;counter-reset:card;
+}
+.card{
+  counter-increment:card;position:relative;display:flex;flex-direction:column;
+  padding:var(--s6) var(--s5) var(--s5);
+  border:1px solid var(--rule);border-radius:26px;
+  background:
+    radial-gradient(120% 70% at 50% -20%, color-mix(in srgb,var(--accent) 9%,transparent), transparent 70%),
+    var(--raised);
+  transition:transform .28s cubic-bezier(.22,.61,.36,1),box-shadow .28s,border-color .28s;
+}
+.card::before{
+  content:counter(card,decimal-leading-zero);
+  position:absolute;top:var(--s5);right:var(--s5);
+  display:grid;place-items:center;width:30px;height:30px;border-radius:50%;
+  border:1px solid var(--rule);background:var(--surface);
+  color:var(--subtle);font-size:.68rem;font-weight:650;letter-spacing:.02em;
+  transition:background-color .28s,color .28s,border-color .28s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  border-color:color-mix(in srgb,var(--accent) 38%,var(--rule));
+  box-shadow:0 20px 42px rgb(28 25 23 / .09);
+}
+.card:hover::before{background:var(--accent);border-color:var(--accent);color:#fffdfa}
+.cat{
+  display:inline-flex;align-items:center;gap:7px;padding-right:38px;
+  color:var(--subtle);font-size:var(--f-2);font-weight:600;letter-spacing:.11em;text-transform:uppercase;
+}
+.cat::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+.card h3{margin-top:var(--s3);font-weight:650;font-size:var(--f1);letter-spacing:-.02em}
+.card p.sum{margin-top:var(--s3);color:var(--muted);font-size:var(--f-1);line-height:1.6}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--s4);list-style:none}
+.chip{padding:3px 11px;border:1px solid var(--rule);border-radius:99px;background:var(--surface);color:var(--subtle);font-size:var(--f-2)}
+
+details.cs{margin-top:auto;padding-top:var(--s4)}
+.card details.cs{border-top:1px solid var(--rule);margin-top:var(--s5)}
+details.cs summary{cursor:pointer;color:var(--accent);font-size:var(--f-1);font-weight:600;list-style:none;min-height:var(--tap);display:flex;align-items:center}
+details.cs summary::-webkit-details-marker{display:none}
+details.cs summary::after{content:' →';transition:transform .2s}
+details.cs[open] summary::after{content:' ↓'}
+.cs-body h4{margin:var(--s4) 0 var(--s2);font-size:var(--f-1);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle)}
+.cs-body p,.cs-body li{color:var(--muted);max-width:62ch}
+.cs-body ul{padding-left:var(--s5)}
+.cs-body li{margin-top:var(--s2)}
+.cs-body li::marker{color:var(--accent)}
+
+/* ============ experience ============ */
+/* Experience as tabs. Four roles stacked vertically ran to several screens
+   of scrolling; a tablist keeps the section one screen tall whatever the
+   content does. Panels stay in the DOM so the history is still readable
+   without JavaScript and still parseable by a crawler. */
+.xp{
+  display:grid;grid-template-columns:230px minmax(0,1fr);gap:0;
+  margin-top:var(--s6);border:1px solid var(--rule);border-radius:26px;
+  background:var(--raised);overflow:hidden;
+}
+.xp-rail{display:flex;flex-direction:column;border-right:1px solid var(--rule);background:var(--surface)}
+.xp-tab{
+  display:flex;flex-direction:column;gap:2px;align-items:flex-start;
+  padding:var(--s4) var(--s5);min-height:var(--tap);
+  border:0;border-left:2px solid transparent;background:transparent;
+  font-family:inherit;text-align:left;cursor:pointer;
+  transition:background-color .2s,border-color .2s,color .2s;
+}
+.xp-tab + .xp-tab{border-top:1px solid var(--rule)}
+.xp-co{font-size:var(--f-1);font-weight:650;color:var(--muted);letter-spacing:-.01em}
+.xp-when{font-size:var(--f-2);color:var(--subtle)}
+.xp-tab:hover{background:color-mix(in srgb,var(--accent) 5%,transparent)}
+.xp-tab:hover .xp-co{color:var(--ink)}
+.xp-tab[aria-selected=true]{background:var(--raised);border-left-color:var(--accent)}
+.xp-tab[aria-selected=true] .xp-co{color:var(--accent)}
+
+.xp-panels{padding:var(--s6)}
+.xp-panel[hidden]{display:none}
+.xp-head{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3)}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;padding:3px 11px;border-radius:99px;
+  border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);background:var(--surface);
+  color:var(--accent);font-size:var(--f-2);font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+}
+.pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.xp-head h3{font-size:var(--f2);font-weight:650;letter-spacing:-.022em}
+.xp-meta{margin-top:var(--s2);color:var(--subtle);font-size:var(--f-1)}
+.xp-emp{color:var(--accent);font-weight:600}
+.xp-list{margin-top:var(--s4);list-style:none}
+.xp-list li{position:relative;max-width:68ch;padding-left:var(--s4);margin-top:var(--s2);color:var(--muted);font-size:var(--f-1);line-height:1.6}
+.xp-list li::before{content:'';position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.6}
+
+/* ============ skills / credentials / contact ============ */
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5);margin-top:var(--s6)}
+.tier{padding-top:var(--s4);border-top:2px solid var(--accent)}
+.tier h3{font-size:var(--f1)}
+.tier p{margin-top:var(--s2);color:var(--subtle);font-size:var(--f-1);line-height:1.5}
+.tier ul{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s4);list-style:none}
+.tile{padding:var(--s1) var(--s3);border:1px solid var(--rule);border-radius:3px;background:var(--raised);font-size:var(--f-1)}
+.cols{display:grid;grid-template-columns:2fr 1fr;gap:var(--s7)}
+.creds{list-style:none;margin-top:var(--s4)}
+.creds li{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:baseline;padding-block:var(--s3);border-top:1px solid var(--rule)}
+.creds b{min-width:11ch}
+.creds span{color:var(--subtle);font-size:var(--f-1)}
+.prose p{max-width:62ch;margin-top:var(--s4);color:var(--muted)}
+.contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4);margin-top:var(--s6);list-style:none}
+.contact li{display:flex;flex-direction:column;gap:var(--s1);padding:var(--s4);border:1px solid var(--rule);border-radius:3px;background:var(--raised)}
+.contact span{color:var(--subtle);font-size:var(--f-1);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+
+footer{padding-block:var(--s6);border-top:1px solid var(--rule);color:var(--subtle);font-size:var(--f-1)}
+.foot{display:flex;flex-wrap:wrap;gap:var(--s5);justify-content:space-between;align-items:baseline}
+.foot ul{display:flex;flex-wrap:wrap;gap:var(--s5);list-style:none}
+.foot-legal{width:100%;padding-top:var(--s4);border-top:1px solid var(--rule)}
+
+/* ============ responsive ============ */
+@media (max-width:1180px){
+  .work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:var(--s5)}
+  .portrait{order:-1;max-width:205px;justify-self:start}
+  .hero h1{max-width:100%}
+  .impact ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tiers,.cols,.contact{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:1fr}
+  .xp{grid-template-columns:1fr}
+  .xp-rail{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--rule)}
+  .xp-tab{flex:none;border-left:0;border-top:0;border-bottom:2px solid transparent;padding:var(--s3) var(--s4)}
+  .xp-tab + .xp-tab{border-top:0;border-left:1px solid var(--rule)}
+  .xp-tab[aria-selected=true]{border-left-color:transparent;border-bottom-color:var(--accent)}
+  .xp-panels{padding:var(--s5) var(--s4)}
+  .menu{display:inline-flex;align-items:center;order:3}
+  nav{display:none;order:4;width:100%}
+  nav.open{display:block;padding-block:var(--s4);border-top:1px solid var(--rule)}
+  nav ul{flex-direction:column;align-items:flex-start;gap:var(--s1)}
+  .bar{flex-wrap:wrap;padding-block:var(--s2)}
+}
+@media (max-width:560px){
+  .impact ul{grid-template-columns:1fr}
+  .brand{font-size:.95rem}
+  .menu{padding-inline:var(--s2)}
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header id="top">
+  <div class="page bar">
+    <a class="brand" href="#top">Pradeep Velavali</a>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Primary">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="page hero-grid">
+    <div>
+      <p class="avail">Open to senior &amp; lead opportunities</p>
+      <h1>I build the automation and AI agents enterprises run on.</h1>
+      <p class="intro">9+ years in Microsoft Power Platform and Azure data services, now focused on Copilot Studio agents and AI integration. I work close to the business and own delivery end to end — requirements, architecture, build, release, support.</p>
+      <p class="meta">Power Platform &amp; AI Solutions Engineer · Hyderabad, India</p>
+      <div class="cta">
+        <a class="btn btn-1" href="assets/Pradeep-Velavali-Resume.pdf" download>Download résumé</a>
+        <a class="btn btn-2" href="#contact">Contact me</a>
+      </div>
+      <ul class="links">
+        <li><a href="mailto:pradeepvelavali@outlook.com">pradeepvelavali@outlook.com</a></li>
+        <li aria-hidden="true">·</li>
+        <li><a href="https://www.linkedin.com/in/pradeepvelavali/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li aria-hidden="true">·</li>
+        <li><a href="https://github.com/pradeepvbh" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </div>
+    <img class="portrait" src="assets/portrait-light.png" alt="Pradeep Velavali, Power Platform and AI Solutions Engineer" width="420" height="480">
+  </div>
+</section>
+
+<!-- ============ IMPACT ============ -->
+<section class="impact" aria-labelledby="impact-h">
+  <div class="page">
+    <p class="label" id="impact-h">Impact to date</p>
+    <ul>
+      <li class="reveal"><p class="fig">$560K+</p><p class="fig-l">Annual cost reduction</p></li>
+      <li class="reveal"><p class="fig">24,000+</p><p class="fig-l">Manual hours saved per annum</p></li>
+      <li class="reveal"><p class="fig">6</p><p class="fig-l">AI use cases delivered</p></li>
+    </ul>
+    <p class="fig-note">Figures span Launchpad, Compliance Hub and Casepilots. Launchpad is a team-built platform I contributed to; the others I built solo.</p>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="section" id="work" aria-labelledby="work-h">
+  <div class="page">
+    <p class="label">Selected work</p>
+    <h2 class="title" id="work-h">Six projects, five with full case studies</h2>
+    <p class="lede">Problem, architecture, the decisions behind it, and what changed as a result.</p>
+
+    <ul class="work-grid">
+
+      <li class="card reveal">
+        <p class="cat">Agentic operations</p>
+        <h3>Casepilots Platform Expert</h3>
+        <p class="sum">A Copilot Studio agent that does not just answer Power Platform questions — it performs the setup, provisioning environments, service accounts and security groups on request.</p>
+        <ul class="chips"><li class="chip">Copilot Studio</li><li class="chip">Power Automate</li><li class="chip">Microsoft Graph API</li><li class="chip">SharePoint</li></ul>
+        <details class="cs"><summary>Read the case study</summary><div class="cs-body">
+          <h4>The problem</h4>
+          <p>Platform setup requests consumed the Power Platform CoE team's time. Each full setup — environments, pipelines, service accounts, security groups, and the bindings between them — took two to three hours of manual work, and roughly two came in every week.</p>
+          <h4>How it works</h4>
+          <ul>
+            <li>No persistent data store — the agent holds no state of its own.</li>
+            <li>Question answering is grounded in the internal Power Platform CoE SharePoint site.</li>
+            <li>Each setup topic triggers a Power Automate flow.</li>
+            <li>Those flows call authenticated Microsoft Graph APIs to perform the real action: creating environments and pipelines, creating service accounts and security groups, and linking security groups to environments.</li>
+          </ul>
+          <h4>Why it was built this way</h4>
+          <p>The absence of a data store is a design decision rather than an omission. Every action is performed through an authenticated Graph call at request time, so the agent never holds a stale picture of the tenant and never becomes a second source of truth. The harder problem here is not retrieval — it is an agent taking privileged, governed action against enterprise infrastructure and being trusted to.</p>
+          <h4>Outcome</h4>
+          <ul><li>Roughly two full setups per week handled by the agent.</li><li>Around 5 hours per week of manual setup work removed.</li><li>Users spend time on citizen development instead of waiting on provisioning.</li></ul>
+        </div></details>
+      </li>
+
+      <li class="card reveal">
+        <p class="cat">AI engineering</p>
+        <h3>Epiq-KB-MCP</h3>
+        <p class="sum">A retrieval server that answers IT helpdesk questions, running in production inside EVA. Built to be re-pointed at another team's data sources rather than rebuilt.</p>
+        <ul class="chips"><li class="chip">MCP</li><li class="chip">Azure OpenAI</li><li class="chip">Azure AI Foundry</li><li class="chip">Blob Storage</li></ul>
+        <details class="cs"><summary>Read the case study</summary><div class="cs-body">
+          <h4>The problem</h4>
+          <p>The IT helpdesk was answering the same procedural questions over and over — how to request headphones, how to book a meeting room, how to set up a company mobile. The answers already existed in knowledge base articles; finding the right one was the work.</p>
+          <h4>How it works</h4>
+          <ul>
+            <li>Knowledge base documents stored in an Azure Blob container.</li>
+            <li>Azure OpenAI performs the retrieval calls against that content.</li>
+            <li>An Azure AI Foundry model generates the summarised answer returned to the user.</li>
+            <li>Exposed as an MCP server, so any MCP-aware client can consume it.</li>
+          </ul>
+          <h4>Why it was built this way</h4>
+          <p>The design decision that mattered was not building a chatbot. It was building an MCP server whose data source is swappable, so another team can point it at their own content with modification instead of commissioning a second system. The alternative — a bespoke bot wired to one Blob container — would have been faster to ship and worth nothing to anyone else.</p>
+          <h4>Outcome</h4>
+          <ul><li>In production, integrated within EVA and serving IT support questions.</li><li>Reusable by other teams against their own data sources.</li></ul>
+        </div></details>
+      </li>
+
+      <li class="card reveal">
+        <p class="cat">AI &amp; compliance</p>
+        <h3>Compliance Hub</h3>
+        <p class="sum">A model-driven application that tracks workforce policy across all 50 US states, fed by AI-driven scraping and summarisation.</p>
+        <ul class="chips"><li class="chip">Model-driven apps</li><li class="chip">Dataverse</li><li class="chip">Power Automate</li><li class="chip">AI prompts</li></ul>
+        <details class="cs"><summary>Read the case study</summary><div class="cs-body">
+          <h4>The problem</h4>
+          <p>HR was manually tracking workforce policy across every US state and monitoring email subscriptions for regulatory changes — slow, repetitive, and easy to miss something in.</p>
+          <h4>How it works</h4>
+          <ul>
+            <li>A model-driven app as the interface for the HR team.</li>
+            <li>Power Automate flows with AI prompts performing web scraping and structured summarisation.</li>
+            <li>Email subscription monitoring feeding the same pipeline.</li>
+            <li>All data stored in Dataverse, covering all 50 US states.</li>
+          </ul>
+          <h4>Why it was built this way</h4>
+          <p>The point was not to summarise regulation — it was to give HR one place where the latest updates arrive already structured and can be marked as actionable items. Tracking and triage in the same system is what turns a reading task into a workflow.</p>
+          <h4>Outcome</h4>
+          <ul><li>15–20 hours per month of manual work removed.</li><li>Approximately $5,000 per month saved.</li><li>Coverage across all 50 US states and their email subscriptions.</li></ul>
+        </div></details>
+      </li>
+
+      <li class="card reveal">
+        <p class="cat">Agentic operations</p>
+        <h3>Enterprise Copilot agents — EVA and CALI</h3>
+        <p class="sum">CALI is a Learn &amp; Growth agent I built end to end as sole developer on the new GitHub Copilot harness. EVA is Epiq's virtual assistant, a team effort I contributed to — most directly, the Epiq-KB-MCP retrieval layer that runs inside it.</p>
+        <ul class="chips"><li class="chip">Copilot Studio</li><li class="chip">GitHub Copilot harness</li><li class="chip">Microsoft Teams</li><li class="chip">Workday</li></ul>
+      </li>
+
+      <li class="card reveal">
+        <p class="cat">Enterprise automation</p>
+        <h3>Launchpad</h3>
+        <p class="sum">Epiq's end-to-end onboarding and offboarding automation, driven from Workday and processing hundreds of employees a day.</p>
+        <ul class="chips"><li class="chip">Power Automate</li><li class="chip">Dataverse</li><li class="chip">Workday REST API</li><li class="chip">Exchange</li></ul>
+        <details class="cs"><summary>Read the case study</summary><div class="cs-body">
+          <h4>The problem</h4>
+          <p>Joiner and leaver processing was manual and ran at a scale that made it expensive — hundreds of employees a day, each needing accounts, access and equipment coordinated across systems.</p>
+          <h4>How it works</h4>
+          <ul>
+            <li>Joiner and leaver records are pulled from the Workday REST API — Workday is the system of record, so the automation reacts to HR rather than duplicating it.</li>
+            <li>Some data held in Dataverse.</li>
+            <li>The remainder handled by Power Automate flows calling APIs across the connected systems.</li>
+            <li>Topic-based structure, with service and Exchange topics built by me.</li>
+          </ul>
+          <h4>Why it was built this way</h4>
+          <p>The aim was to replace the manual steps that every new joiner generated — adding the user to default groups, enabling their mailbox, creating a Temporary Access Pass, notifying their manager, raising a device request — and to run the same sequence in reverse for terminated employees. Each step was small; together, at hundreds of employees a day, they were the cost.</p>
+          <h4>My scope</h4>
+          <p>All service-related topics, the integrations and their associated flows, and several Exchange-related topics. Launchpad was a team build, so the figures below are platform-level outcomes.</p>
+          <h4>Outcome</h4>
+          <ul>
+            <li>Platform-level: around 2,000 hours of manual effort removed per month.</li>
+            <li>Platform-level: annual savings exceeding $500,000.</li>
+            <li>Processes hundreds of employees daily.</li>
+          </ul>
+        </div></details>
+      </li>
+
+      <li class="card reveal">
+        <p class="cat">Data engineering &amp; analytics</p>
+        <h3>Data migration &amp; reporting</h3>
+        <p class="sum">Four workstreams moving enterprise data into the Fabric Lakehouse with ADF pipelines and dataflows, each with Power BI reporting built on top.</p>
+        <ul class="chips"><li class="chip">Azure Data Factory</li><li class="chip">Microsoft Fabric</li><li class="chip">Lakehouse</li><li class="chip">Dataflows</li><li class="chip">Power BI</li></ul>
+        <details class="cs"><summary>Read the case study</summary><div class="cs-body">
+          <h4>ServiceNow migration — 50+ tables</h4>
+          <p>The organisation decided to move to a different ITSM tool. As part of the data back-up plan I migrated more than 50 ServiceNow tables into the Fabric Lakehouse using ADF pipelines with transformations, working alongside the ServiceNow administrator on the source side, then built Power BI reports over the migrated data.</p>
+
+          <h4>Copilot agent transcripts</h4>
+          <p>Agent transcripts are only retained for 30 days by default, so any trend longer than a month was invisible. I set up Fabric dataflows to move summarised transcript data into the Lakehouse before it expires, with Power BI reporting on top — the history now outlives the platform limit.</p>
+
+          <h4>Corporate licensing</h4>
+          <p>With employees joining and leaving at volume, licence positions were hard to keep on top of. A scheduled ADF pipeline fetches licence data, and a Power BI report tracks what is available, how much is consumed, and retention percentage — turning a periodic manual reconciliation into something always current.</p>
+
+          <h4>EndTrack — IT asset reporting</h4>
+          <p>Reporting across the IT asset estate: stock versus in-use, assignment history, and availability by location.</p>
+        </div></details>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience" aria-labelledby="exp-h">
+  <div class="page">
+    <p class="label">Experience</p>
+    <h2 class="title" id="exp-h">9+ years, four employers, steadily more ownership</h2>
+    <div class="xp">
+      <div class="xp-rail" role="tablist" aria-label="Employers">
+        <button class="xp-tab" role="tab" id="t-epiq" aria-controls="p-epiq" aria-selected="true" tabindex="0">
+          <span class="xp-co">Epiq Systems</span>
+          <span class="xp-when">Oct 2023 — Present</span>
+        </button>
+        <button class="xp-tab" role="tab" id="t-happiest" aria-controls="p-happiest" aria-selected="false" tabindex="-1">
+          <span class="xp-co">Happiest Minds</span>
+          <span class="xp-when">Sep 2022 — Oct 2023</span>
+        </button>
+        <button class="xp-tab" role="tab" id="t-quadrant" aria-controls="p-quadrant" aria-selected="false" tabindex="-1">
+          <span class="xp-co">Quadrant Tech.</span>
+          <span class="xp-when">Sep 2020 — Sep 2022</span>
+        </button>
+        <button class="xp-tab" role="tab" id="t-mindtree" aria-controls="p-mindtree" aria-selected="false" tabindex="-1">
+          <span class="xp-co">Mindtree</span>
+          <span class="xp-when">Feb 2017 — Sep 2020</span>
+        </button>
+      </div>
+      <div class="xp-panels">
+        <div class="xp-panel" role="tabpanel" id="p-epiq" aria-labelledby="t-epiq">
+          <div class="xp-head">
+            <h3>Senior Power Platform Developer</h3><span class="pill">Current</span>
+          </div>
+          <p class="xp-meta"><span class="xp-emp">Epiq Systems</span> · Oct 2023 — Present · Remote, India</p>
+          <ul class="xp-list">
+            <li>Built Epiq-KB-MCP, an MCP retrieval server over an Azure Blob knowledge base using Azure OpenAI and Azure AI Foundry, now in production inside EVA and designed to be re-pointed at other teams' data sources.</li>
+            <li>Built Casepilots Platform Expert, a Copilot Studio agent that provisions Power Platform environments, pipelines, service accounts and security groups through authenticated Microsoft Graph calls — removing 5+ hours of manual setup a week.</li>
+            <li>Built Compliance Hub, a model-driven app tracking workforce policy across all 50 US states with AI-driven scraping and summarisation, saving 15–20 hours and ~$5,000 a month.</li>
+            <li>Built CALI end to end as sole developer on the new GitHub Copilot harness — a Learn &amp; Growth agent answering questions sourced from Workday.</li>
+            <li>Contributed to Launchpad, Epiq's onboarding and offboarding platform, owning all service-related topics, the integrations and their flows, and several Exchange topics.</li>
+            <li>Migrated 50+ ServiceNow tables into the Fabric Lakehouse with ADF pipelines ahead of an ITSM platform change, and built Power BI reporting over corporate licensing, IT asset tracking and Copilot agent transcripts.</li>
+            <li>Developed AI document classification automation processing 50+ documents per run.</li>
+          </ul>
+        </div>
+        <div class="xp-panel" role="tabpanel" id="p-happiest" aria-labelledby="t-happiest">
+          <div class="xp-head">
+            <h3>Module Lead</h3><span class="pill">Led 3 developers</span>
+          </div>
+          <p class="xp-meta"><span class="xp-emp">Happiest Minds</span> · Sep 2022 — Oct 2023 · Bengaluru, India</p>
+          <ul class="xp-list">
+            <li>Led a team of three junior developers delivering Power Apps solutions for enterprise clients.</li>
+            <li>Built a responsive asset management application with offline capability, OCR, multilingual support and print services.</li>
+            <li>Owned client onboarding through effort estimation, work breakdown structures and POCs.</li>
+            <li>Optimised SQL for bulk data loads, cutting over 90 minutes from upload runs.</li>
+          </ul>
+        </div>
+        <div class="xp-panel" role="tabpanel" id="p-quadrant" aria-labelledby="t-quadrant">
+          <div class="xp-head">
+            <h3>Senior Engineer</h3>
+          </div>
+          <p class="xp-meta"><span class="xp-emp">Quadrant Technologies</span> · Sep 2020 — Sep 2022 · Remote, India</p>
+          <ul class="xp-list">
+            <li>Designed Q-Migrator, a canvas app for monitoring database migrations, using PCF components, custom connectors and security roles.</li>
+            <li>Delivered Power BI enterprise dashboards with row-level security, query parameters, bookmarks and custom hierarchies.</li>
+            <li>Built a timesheet application for Athletico that removed over 50 hours of manual effort each month.</li>
+          </ul>
+        </div>
+        <div class="xp-panel" role="tabpanel" id="p-mindtree" aria-labelledby="t-mindtree">
+          <div class="xp-head">
+            <h3>Junior Engineer</h3><span class="pill">Where it started</span>
+          </div>
+          <p class="xp-meta"><span class="xp-emp">Mindtree Ltd</span> · Feb 2017 — Sep 2020 · Hyderabad, India</p>
+          <ul class="xp-list">
+            <li>Built Power BI dashboards for Microsoft product teams supporting Office 365 migrations and identity services.</li>
+            <li>Developed an outage communication canvas app notifying service and delivery managers in near real time.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills" aria-labelledby="sk-h">
+  <div class="page">
+    <p class="label">Technical skills</p>
+    <h2 class="title" id="sk-h">Grouped by how deeply I know them</h2>
+    <div class="tiers">
+      <div class="tier reveal">
+        <h3>Core</h3>
+        <p>Deep working knowledge — happy to be interviewed in detail.</p>
+        <ul><li class="tile">Power Apps</li><li class="tile">Power Automate</li><li class="tile">Dataverse</li><li class="tile">Copilot Studio</li><li class="tile">Power BI</li><li class="tile">DAX</li><li class="tile">Dataflows</li></ul>
+      </div>
+      <div class="tier reveal">
+        <h3>Working</h3>
+        <p>Shipped production work with it.</p>
+        <ul><li class="tile">Azure Data Factory</li><li class="tile">Azure Table Storage</li><li class="tile">Azure Key Vault</li><li class="tile">Azure Blob Storage</li><li class="tile">Containers</li><li class="tile">Lakehouse</li><li class="tile">Microsoft Fabric</li></ul>
+      </div>
+      <div class="tier reveal">
+        <h3>Familiar</h3>
+        <p>Used on a project or two; no depth claimed.</p>
+        <ul><li class="tile">SQL</li><li class="tile">JavaScript</li><li class="tile">Power Pages</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDENTIALS ============ -->
+<section class="section" aria-labelledby="cr-h">
+  <div class="page cols">
+    <div>
+      <p class="label" id="cr-h">Certifications</p>
+      <ul class="creds">
+        <li><b>PL-200</b><span>Microsoft Power Platform Functional Consultant</span></li>
+        <li><b>PL-100</b><span>Microsoft Power Platform App Maker</span></li>
+        <li><b>PL-300 / DA-100</b><span>Microsoft Power BI Data Analyst</span></li>
+        <li><b>MCT, 2021–2022</b><span>Microsoft Certified Trainer — past credential</span></li>
+      </ul>
+    </div>
+    <div>
+      <p class="label">Education</p>
+      <ul class="creds">
+        <li><b>B.Tech</b><span>SRIT, JNTU Anantapur</span><span>2012 – 2016</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about" aria-labelledby="ab-h">
+  <div class="page">
+    <p class="label">About</p>
+    <h2 class="title" id="ab-h">From dashboards to platforms to agents</h2>
+    <div class="prose">
+      <p>I started as a Power BI developer building dashboards for Microsoft product teams, and spent the years since moving steadily closer to the problem rather than the tool. Reporting became applications, applications became automation, and automation became platforms that business units depend on daily.</p>
+      <p>What I do now is take a messy, expensive manual process and own the whole route to removing it. That means sitting with the people who live the problem, designing something that fits how they actually work, building it, shipping it, and staying with it afterwards. At Happiest Minds I led three developers and learned that the hardest part of delivery is rarely the code.</p>
+      <p>The work I am most interested in now is agentic. I have built a retrieval server that answers IT support questions in production, an agent that provisions Power Platform infrastructure on request rather than just describing how to do it, and a Learn &amp; Growth agent on the GitHub Copilot harness. The interesting problems there are not prompts — they are trust, permissions, and knowing when an agent should act.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact" aria-labelledby="co-h">
+  <div class="page">
+    <p class="label">Contact</p>
+    <h2 class="title" id="co-h">Open to senior &amp; lead opportunities</h2>
+    <p class="lede">Based in Hyderabad, India, working with teams across India and internationally. Email is the surest way to reach me.</p>
+    <ul class="contact">
+      <li><span>Email</span><a href="mailto:pradeepvelavali@outlook.com">pradeepvelavali@outlook.com</a></li>
+      <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/pradeepvelavali/" target="_blank" rel="noopener noreferrer">/in/pradeepvelavali</a></li>
+      <li><span>GitHub</span><a href="https://github.com/pradeepvbh" target="_blank" rel="noopener noreferrer">@pradeepvbh</a></li>
+      <li><span>Résumé</span><a href="assets/Pradeep-Velavali-Resume.pdf" download>Download PDF</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="page foot">
+    <div>
+      <p style="font-weight:650;letter-spacing:-.02em;font-size:1.05rem;color:var(--ink)">Pradeep Velavali</p>
+      <p>Power Platform &amp; AI Solutions Engineer · Hyderabad, India</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="mailto:pradeepvelavali@outlook.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/pradeepvelavali/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/pradeepvbh" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="#top">Back to top</a></li>
+      </ul>
+    </nav>
+    <p class="foot-legal">© <span id="yr"></span> Pradeep Velavali</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* ---- mobile menu ---- */
+  var menuBtn = document.getElementById('menuBtn');
+  var nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false') }
+  });
+
+
+  /* ---- experience tabs ---- */
+  var rail = document.querySelector('.xp-rail');
+  if (rail) {
+    var tabs = [].slice.call(rail.querySelectorAll('.xp-tab'));
+    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')) });
+
+    function select(i, focus) {
+      tabs.forEach(function (t, n) {
+        t.setAttribute('aria-selected', String(n === i));
+        t.tabIndex = n === i ? 0 : -1;
+        panels[n].hidden = n !== i;
+      });
+      if (focus) tabs[i].focus();
+    }
+
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(i) });
+      t.addEventListener('keydown', function (e) {
+        var n = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? i + 1
+              : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? i - 1
+              : e.key === 'Home' ? 0
+              : e.key === 'End' ? tabs.length - 1 : null;
+        if (n === null) return;
+        e.preventDefault();
+        select((n + tabs.length) % tabs.length, true);
+      });
+    });
+
+    /* Panels start visible in the markup so the history survives without JS;
+       collapse to the first only once we know scripting is on. */
+    select(0);
+  }
+
+  /* ---- reveal on scroll ---- */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target) } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(function (el, i) {
+      el.style.transitionDelay = (i % 4) * 70 + 'ms';
+      io.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in') });
+  }
+
+  /* ---- active section in nav ---- */
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav a[href^="#"]'));
+  var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')) }).filter(Boolean);
+  if ('IntersectionObserver' in window && targets.length) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        links.forEach(function (a) {
+          a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + en.target.id));
+        });
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    targets.forEach(function (t) { spy.observe(t) });
+  }
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
